@@ -27,7 +27,7 @@ const orderTypes = {
     { name: "quantity", type: "uint256" },
     { name: "side", type: "uint8" },
     { name: "orderType", type: "uint8" },
-    { name: "orderId", type: "uint256" },
+    { name: "orderId", type: "string" },
   ],
 };
 
@@ -94,7 +94,7 @@ async function signOrder() {
     quantity: ethers.utils.parseEther("1"),
     side: 0,
     orderType: 1,
-    orderId: 1,
+    orderId: "1",
   };
 
   try {
@@ -106,7 +106,7 @@ async function signOrder() {
     console.log("\nSignature:", signature);
 
     const expectedSignature =
-      "0x12c6470c26213b57c8c4fd9cf8023a430bba832ee6fff97b703f254cb9f2c61d4a7ab3bf7ff02c9b2e63498f1b822e5ff102a7e11db99ca9c223a753caaa6f2f1b";
+      "0x45f8a011bce2f4d3a01c12d0be5e34b8e8bf6391f25bb57b86b7dc7c992c74a3147599b7f0d82b9a44db6b9a9d4951c398779424394201979257694a01fa9d161c";
     console.log("Expected Signature:", expectedSignature);
     console.log("Signatures match:", signature === expectedSignature);
 
