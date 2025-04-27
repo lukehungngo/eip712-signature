@@ -5,7 +5,7 @@ const domain = {
   name: "TdsContract",
   version: "1.0.0",
   chainId: 1, // Matching the test environment chain ID
-  verifyingContract: "0x0BAd56221BB65860C02a2609CacA8Ea95503EC2B", // Contract address from test
+  verifyingContract: "0x1Bcd6c83f3b2D2FC242a9223FFA0cbe43b272E35", // Contract address from test
 };
 
 const userOrderTypes = {
@@ -14,8 +14,8 @@ const userOrderTypes = {
     { name: "pair", type: "string" },
     { name: "price", type: "uint256" },
     { name: "quantity", type: "uint256" },
-    { name: "side", type: "uint256" },
-    { name: "orderType", type: "uint256" },
+    { name: "side", type: "uint8" },
+    { name: "orderType", type: "uint8" },
   ],
 };
 
@@ -25,8 +25,8 @@ const orderTypes = {
     { name: "pair", type: "string" },
     { name: "price", type: "uint256" },
     { name: "quantity", type: "uint256" },
-    { name: "side", type: "uint256" },
-    { name: "orderType", type: "uint256" },
+    { name: "side", type: "uint8" },
+    { name: "orderType", type: "uint8" },
     { name: "orderId", type: "string" },
   ],
 };
@@ -59,7 +59,7 @@ async function signUserOrder() {
     console.log("\nSignature:", signature);
 
     const expectedSignature =
-      "0xc5a4f621810c1801f31bd9f83b685547a3efcd7e1c319cc39e5f1efc8b70b7180b54bc0628f091e295a5629724c2f00bf363f447d8d0ab47dfd5e734043b94ff1c";
+      "0xd9c723195d1ca33c804ecc340ec1825b8d8e70414635b241bde94490408b2cf00ce07b7f2a1976161384882e0eb7e7a55b670c603eec9c001a2b8687ed9355971c";
     console.log("Expected Signature:", expectedSignature);
     console.log("Signatures match:", signature === expectedSignature);
 
@@ -106,7 +106,7 @@ async function signOrder() {
     console.log("\nSignature:", signature);
 
     const expectedSignature =
-      "0x3ad11feaf810cc81548636c071cb0d15df3c8aa16bfb05d41417030a9e56e71e53dac67dc86388ba3d516a63d18d743213946420f50ad8406ea60c62e4715d021b";
+      "0xcc9a7273f33fee7df107eefcd1ee02cc602f3ab5cd94865a18fed6ad01a9af9125620f9cc95aab96b247cb4d07c22167767f7dd1498619c18efbdb50a7c16e1b1b";
     console.log("Expected Signature:", expectedSignature);
     console.log("Signatures match:", signature === expectedSignature);
 
